@@ -6,7 +6,7 @@ import it.ats.app.controller.impl.DictionaryControllerImpl;
 public class ApplicationMain {
 
 	public static void main(String[] args) {
-		String s = "Marco";
+		String s = "andrea";
 		
 		DictionaryController dictionaryController = new DictionaryControllerImpl();
 		
