@@ -7,6 +7,13 @@
   <version>1.4</version>
   <name>my-parent-project</name>
   <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -16,8 +23,16 @@
     </dependency>
   </dependencies>
 <modules>
-    <module>my-model-project</module>
+  <module>my-model-project</module>
   <module>my-service-project</module>
   <module>my-ctrl-project</module>
   </modules>
 </project>
+
+<!--
+	Inheritance VS Aggregate dal sito Maven:
+
+	Inheritance and aggregation create a nice dynamic to control builds through a single, high-level POM. You often see projects that are both parents and aggregators. For example, the entire Maven core runs through a single base POM org.apache.maven:maven, so building the Maven project can be executed by a single command: mvn compile. However, an aggregator project and a parent project are both POM projects, they are not one and the same and should not be confused.
+
+	=> A POM project may be inherited from - but does not necessarily have - any modules that it aggregates. Conversely, a POM project may aggregate projects that do not inherit from it.
+-->
