@@ -21,9 +21,11 @@ public class DictionaryServiceImpl implements DictionaryService {
 		
 		List<String> lista = dictionaryRepo.findAll();
 		List<String> listaContiene = new ArrayList<String>();
+		String portionString = (String) portion;
+		portionString = portionString.toLowerCase();
 		
 		for(String s: lista) {
-			if(s.contains(portion)) {
+			if(s.contains(portionString)) {
 				listaContiene.add(s);
 			}
 		}

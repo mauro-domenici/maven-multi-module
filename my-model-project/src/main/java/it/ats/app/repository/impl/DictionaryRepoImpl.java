@@ -11,12 +11,12 @@ public class DictionaryRepoImpl implements DictionaryRepo {
 	
 	public DictionaryRepoImpl() {
 		lista = new ArrayList<String>();
-		lista.add("Mauro");
-		lista.add("Francesca");
-		lista.add("Fabiana");
-		lista.add("Andrea F.");
-		lista.add("Andrea L.");
-		lista.add("Andrea T.");
+		lista.add("mauro");
+		lista.add("francesca");
+		lista.add("fabiana");
+		lista.add("andrea f.");
+		lista.add("andrea l.");
+		lista.add("andrea t.");
 	}
 	
 	@Override
