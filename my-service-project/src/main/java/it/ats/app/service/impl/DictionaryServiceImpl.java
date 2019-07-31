@@ -18,12 +18,12 @@ public class DictionaryServiceImpl implements DictionaryService {
 	
 	
 	@Override
-	public List<String> contains(Search portion) {
+	public List<String> contains(Search search) {
 		
 		List<String> lista = dictionaryRepo.findAll();
 		List<String> listaContiene = new ArrayList<String>();
 		
-		String portionString = portion.getPortion();
+		String portionString = search.getPortion();
 		portionString = portionString.toLowerCase();
 		
 		for(String s: lista) {
@@ -31,7 +31,30 @@ public class DictionaryServiceImpl implements DictionaryService {
 				listaContiene.add(s);
 			}
 		}
+		
+		if(search.isInitial()) {
+			for(String s: listaContiene) {
+				if(!s.startsWith(portionString)) {
+					listaContiene.remove(s);
+				}
+			}
+		}
+		
 		return listaContiene;
+	}
+
+
+	@Override
+	public List<String> measures(Search search) {
+		List<String> lista = dictionaryRepo.findAll();
+		List<String> listaLunga = new ArrayList<String>();
+		
+		for(String s: lista) {
+			if(s.length() == search.getLenght()) {
+				listaLunga.add(s);
+			}
+		}
+		return listaLunga;
 	}
 
 }

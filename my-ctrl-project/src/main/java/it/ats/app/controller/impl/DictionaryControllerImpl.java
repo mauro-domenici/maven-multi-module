@@ -17,8 +17,9 @@ public class DictionaryControllerImpl implements DictionaryController {
 	}
 	
 	@Override
-	public void process(String s) {
+	public void process(String s, boolean b) {
 		Search search = new Search(s);
+		search.setInitial(b);
 		
 		List<String> lista = dictionaryService.contains(search);
 		for(String parola: lista) {
@@ -26,6 +27,22 @@ public class DictionaryControllerImpl implements DictionaryController {
 		}
 	}
 	
+	
+
+	@Override
+	public void processLength(String s) {
+		int length = Integer.parseInt(s);
+		Search search = new Search();
+		search.setLenght(length);
+		
+		List<String> lista = dictionaryService.measures(search);
+		
+		for(String parola: lista) {
+			System.out.println(parola);
+		}
+		
+	}
+
 	
 
 }

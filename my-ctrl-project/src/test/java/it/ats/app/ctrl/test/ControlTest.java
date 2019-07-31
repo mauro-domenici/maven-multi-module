@@ -5,14 +5,22 @@ import org.junit.*;
 
 import it.ats.app.controller.DictionaryController;
 import it.ats.app.controller.impl.DictionaryControllerImpl;
-import it.ats.app.domain.Search;
 
 public class ControlTest {
 	@Test
 	public void processTest() {
 		DictionaryController dController = new DictionaryControllerImpl();
-		
-		dController.process("mauro");
+		System.out.println("----process test-----");
 
+		dController.process("r", false);
+
+	}
+	
+	@Test
+	public void processLengthTest() {
+		DictionaryController dController = new DictionaryControllerImpl();
+		System.out.println("----processLength test-----");
+		dController.processLength("5");
+		
 	}
 }
