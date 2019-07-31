@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-
+import it.ats.app.domain.Search;
 import it.ats.app.service.DictionaryService;
 import it.ats.app.service.impl.DictionaryServiceImpl;
 
@@ -14,9 +14,13 @@ public class ServiceTest {
 	@Test
 	public void testDictionaryNoUpperCase() {
 		DictionaryService dictionaryService = new DictionaryServiceImpl();
-		List<String> lista = dictionaryService.contains("Mauro");
+		Search search = new Search("AndRe");
+		List<String> lista = dictionaryService.contains(search);
 		
-		Assert.assertEquals(1, lista.size());
+		for(String s: lista) {
+			System.out.println(s);
+		}
+		Assert.assertEquals(3, lista.size());
 	}
 
 }
