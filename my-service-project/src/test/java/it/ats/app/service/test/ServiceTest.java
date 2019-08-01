@@ -14,7 +14,7 @@ public class ServiceTest {
 	@Test
 	public void testDictionaryNoUpperCase() {
 		DictionaryService dictionaryService = new DictionaryServiceImpl();
-		Search search = new Search("AndRe");
+		Search search = new Search("casa", "ita", 0, false);
 		List<String> lista = dictionaryService.contains(search);
 		
 		for(String s: lista) {

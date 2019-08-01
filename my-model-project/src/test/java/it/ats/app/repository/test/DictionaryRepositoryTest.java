@@ -15,7 +15,7 @@ public class DictionaryRepositoryTest {
 	@Test
 	public void testDictionaryNoUpperCase() {
 		DictionaryRepo dictionaryRepo = new DictionaryRepoImpl();
-		List<String> lista = dictionaryRepo.findAll();
+		List<String> lista = dictionaryRepo.findByLanguage("ita").getListaParole();
 		for(String s: lista) {
 			System.out.println(s);
 		}

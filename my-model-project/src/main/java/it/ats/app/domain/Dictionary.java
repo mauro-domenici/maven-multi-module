@@ -7,26 +7,29 @@ import it.ats.app.repository.DictionaryRepo;
 import it.ats.app.repository.impl.DictionaryRepoImpl;
 
 public class Dictionary {
-	private static Dictionary instance = null;
 	private List<String> listaParole;
-	private DictionaryRepo dRepo;
+//	private DictionaryRepo dRepo;
 	private Integer id;
 	private String lang;
 	
+	public Dictionary(){
+		
+	}
 	
-	private Dictionary() {
+	
+//	public Dictionary(Integer id, String lang) {
 //		this.dRepo = new DictionaryRepoImpl();
 //		this.id = id;
 //		this.lang = lang;
-		this.listaParole = new ArrayList<String>();
-		this.listaParole.add("mauro");
-		this.listaParole.add("fabiana");
-		this.listaParole.add("francesca");
-		this.listaParole.add("jerry");
-		this.listaParole.add("andrea f.");
-		this.listaParole.add("andrea l.");
-		this.listaParole.add("andrea t.");
-	}
+//		this.listaParole = dRepo.findByLanguage(lang);
+////		this.listaParole.add("mauro");
+////		this.listaParole.add("fabiana");
+////		this.listaParole.add("francesca");
+////		this.listaParole.add("jerry");
+////		this.listaParole.add("andrea f.");
+////		this.listaParole.add("andrea l.");
+////		this.listaParole.add("andrea t.");
+//	}
 	
 	public List<String> getListaParole(){
 		return this.listaParole;
@@ -48,11 +51,4 @@ public class Dictionary {
 		this.lang = lang;
 	}
 	
-	public static Dictionary getInstance() {
-		
-		if (instance == null) {
-			instance = new Dictionary();
-		}
-		return instance;
-	}
 }

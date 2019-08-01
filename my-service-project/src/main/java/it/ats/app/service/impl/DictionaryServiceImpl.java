@@ -20,7 +20,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 	@Override
 	public List<String> contains(Search search) {
 		
-		List<String> lista = dictionaryRepo.findAll();
+		List<String> lista = dictionaryRepo.findByLanguage(search.getLang()).getListaParole();
 		List<String> listaContiene = new ArrayList<String>();
 		
 		String portionString = search.getPortion();
@@ -50,7 +50,7 @@ public class DictionaryServiceImpl implements DictionaryService {
 
 	@Override
 	public List<String> measures(Search search) {
-		List<String> lista = dictionaryRepo.findAll();
+		List<String> lista = dictionaryRepo.findByLanguage(search.getLang()).getListaParole();
 		List<String> listaLunga = new ArrayList<String>();
 		
 		for(String s: lista) {

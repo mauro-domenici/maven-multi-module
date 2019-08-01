@@ -2,6 +2,7 @@ package it.ats.app.domain;
 
 public class Search {
 	private String portion;
+	private String lang;
 	private int length;
 	private boolean initial;
 	
@@ -9,8 +10,11 @@ public class Search {
 		this.portion = "";
 	}
 	
-	public Search(String portion) {
+	public Search(String portion, String lang, int length, boolean initial) {
 		this.portion = portion;
+		this.lang = lang;
+		this.initial = initial;
+		this.length = length;
 	}
 	
 	public String getPortion() {
@@ -29,16 +33,19 @@ public class Search {
 		this.length = lenght;
 	}
 
-	public boolean getStartsWith() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	public boolean isInitial() {
 		return initial;
 	}
 
 	public void setInitial(boolean initial) {
 		this.initial = initial;
+	}
+
+	public String getLang() {
+		return lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
 	}
 }
