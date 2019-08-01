@@ -29,16 +29,20 @@ public class DictionaryServiceImpl implements DictionaryService {
 		for(String s: lista) {
 			if(s.contains(portionString)) {
 				listaContiene.add(s);
+				if(search.isInitial() && !s.startsWith(portionString)) {
+					listaContiene.remove(s);
+				}
+				
 			}
 		}
 		
-		if(search.isInitial()) {
-			for(String s: listaContiene) {
-				if(!s.startsWith(portionString)) {
-					listaContiene.remove(s);
-				}
-			}
-		}
+//		if(search.isInitial()) {
+//			for(String s: listaContiene) {
+//				if(!s.startsWith(portionString)) {
+//					listaContiene.remove(s);
+//				}
+//			}
+//		}
 		
 		return listaContiene;
 	}
@@ -54,7 +58,12 @@ public class DictionaryServiceImpl implements DictionaryService {
 				listaLunga.add(s);
 			}
 		}
-		return listaLunga;
+		
+		if(listaLunga.isEmpty()) {
+			return null;
+		} else {
+			return listaLunga;
+		}
 	}
 
 }

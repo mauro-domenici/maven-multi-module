@@ -1,6 +1,8 @@
 package it.ats.app.controller;
 
+import java.util.List;
+
 public interface DictionaryController {
-	public void process(String s, boolean b);
-	public void processLength(String s);
+	public List<String> process(String s, boolean b);
+	public List<String> processLength(String s);
 }
