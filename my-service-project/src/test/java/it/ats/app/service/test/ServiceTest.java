@@ -14,13 +14,13 @@ public class ServiceTest {
 	@Test
 	public void testDictionaryNoUpperCase() {
 		DictionaryService dictionaryService = new DictionaryServiceImpl();
-		Search search = new Search("casa", "ita", 0, false);
+		Search search = new Search("ca", "ita", 0, false);
 		List<String> lista = dictionaryService.contains(search);
 		
 		for(String s: lista) {
 			System.out.println(s);
 		}
-		Assert.assertEquals(3, lista.size());
+		Assert.assertEquals(2, lista.size());
 	}
 
 }

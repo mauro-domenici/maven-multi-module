@@ -13,7 +13,7 @@ public class ControlTest {
 	@Test
 	public void processTest() {
 		DictionaryController dController = new DictionaryControllerImpl();
-		Assert.assertEquals(6, dController.process("r", "ita", false).size());
+		Assert.assertEquals(2, dController.process("c", "fra", true).size());
 
 		
 		
@@ -24,7 +24,7 @@ public class ControlTest {
 	public void processLengthTest() {
 		DictionaryController dController = new DictionaryControllerImpl();
 		Assert.assertNotNull(dController.processLength("5","ita"));
-		Assert.assertNull(dController.processLength("0","ita"));
+		Assert.assertNull(dController.processLength("0","fra"));
 
 
 	}

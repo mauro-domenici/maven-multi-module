@@ -6,7 +6,7 @@ public class JsonData {
 	private String fraDictionary;
 	
 	public JsonData() {
-		this.itaDictionary = " dictionary: {\r\n" + 
+		this.itaDictionary = "{\r\n" + 
 				"			\"id\": 1,\r\n" + 
 				"			\"lang\": \"ita\",\r\n" + 
 				"			\"listaParole\": [\r\n" + 
@@ -20,7 +20,7 @@ public class JsonData {
 				"				\"penna\"\r\n" + 
 				"			]\r\n" + 
 				"		}";
-		this.engDictionary = "dictionary: {\r\n" + 
+		this.engDictionary = "{\r\n" + 
 				"			\"id\": 2,\r\n" + 
 				"			\"lang\": \"eng\",\r\n" + 
 				"			\"listaParole\": [\r\n" + 
@@ -34,7 +34,7 @@ public class JsonData {
 				"				\"pen\"\r\n" + 
 				"			]\r\n" + 
 				"		}";
-		this.fraDictionary = "dictionary: {\r\n" + 
+		this.fraDictionary = "{\r\n" + 
 				"			\"id\": 3,\r\n" + 
 				"			\"lang\": \"fra\",\r\n" + 
 				"			\"listaParole\": [\r\n" + 

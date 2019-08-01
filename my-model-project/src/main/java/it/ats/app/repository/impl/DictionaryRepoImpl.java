@@ -38,7 +38,8 @@ public class DictionaryRepoImpl implements DictionaryRepo {
 	public Dictionary findByLanguage(String lang) {
 		Gson g = new Gson();
 		JsonData jsonData = new JsonData();
-		return g.fromJson(jsonData.getDictionaryString(lang), Dictionary.class);
+		String json = jsonData.getDictionaryString(lang);
+		return g.fromJson(json, Dictionary.class);
 	}
 
 	public List<String> listFromJson(String lang) {

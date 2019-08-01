@@ -16,9 +16,11 @@ public class DictionaryRepositoryTest {
 	public void testDictionaryNoUpperCase() {
 		DictionaryRepo dictionaryRepo = new DictionaryRepoImpl();
 		List<String> lista = dictionaryRepo.findByLanguage("ita").getListaParole();
-		for(String s: lista) {
-			System.out.println(s);
+		if(lista != null) {
+			for(String s: lista) {
+				System.out.println(s);
+			}
 		}
-		Assert.assertEquals(3, lista.size());
+		Assert.assertEquals(8, lista.size());
 	}
 }
